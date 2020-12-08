@@ -12,3 +12,15 @@ describe("Button.vue", () => {
     expect(wrapper.text()).toContain(content);
   });
 });
+
+describe("set button size", () => {
+  it.only('by props.size', () => {
+    const size = 'small'
+    const wrapper = mount(Button, {
+      props: {
+        size
+      }
+    })
+    expect(wrapper.classes()).toContain(`el-button--${size}`)
+  })
+})
